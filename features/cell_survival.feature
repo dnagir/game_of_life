@@ -6,7 +6,7 @@ Feature: Cell survival
   
   
   Scenario Outline: Surviving with neighbours
-    Given there is a living cell
+    Given there is a live cell
     And there are <neighbours> neighbours
     When the cell is evolved
     Then the cell should be <status>
@@ -14,8 +14,8 @@ Feature: Cell survival
       | neighbours | status |
       |      0     | dead   |
       |      1     | dead   |
-      |      2     | alive  |
-      |      3     | alive  |
+      |      2     | live   |
+      |      3     | live   |
       |      4     | dead   |
       |      5     | dead   |
       |      6     | dead   |
@@ -33,7 +33,7 @@ Feature: Cell survival
       |      0     | dead   |
       |      1     | dead   |
       |      2     | dead   |
-      |      3     | alive  |
+      |      3     | live   |
       |      4     | dead   |
       |      5     | dead   |
       |      6     | dead   |

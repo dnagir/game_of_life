@@ -5,11 +5,12 @@ Feature: Evolve
 
   Scenario: Evolving to the next generation
     Given the board
-      | |x| |
       |x| | |
-      | |x| |
-    When the board is evolved
-    Then the board should be
-      | |x| |
       |x|x| |
-      | |x| |
+      | | | |
+    And the game is initialised
+    When the generation passes
+    Then the board should be
+      |x|x|x|
+      |x|x|x|
+      |x|x|x|

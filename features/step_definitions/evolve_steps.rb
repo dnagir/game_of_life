@@ -1,15 +1,15 @@
 
 Given /^the board$/ do |table|
   # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  @board = GameBoard.new(:state => table.raw)
 end
 
-When /^the board is evolved$/ do
-  pending # express the regexp above with the code you wish you had
+When /^the generation passes$/ do
+  @game.evolve
 end
 
 Then /^the board should be$/ do |table|
-  # table is a Cucumber::Ast::Table
-  pending # express the regexp above with the code you wish you had
+  expected = table.raw
+  @board.should == GameBoard.new(:state => expected)
 end
 
