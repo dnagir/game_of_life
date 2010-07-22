@@ -1,5 +1,5 @@
 ## Solution For the Ruby Programming Challenge ##
-There is nothing special about this solution (from [Dmytrii Nagirniak] (http://dnagir.blogspot.com) ).
+There is nothing special about this solution (from [Dmytrii Nagirniak](http://dnagir.blogspot.com)).
 
 Just couple of notes:
 
