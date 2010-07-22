@@ -31,8 +31,8 @@ class GameBoard
     @state[y][x] = cell_state == 0 || cell_state == :dead ? 0 : 1
   end
   
-  def move_cell(cell, diff)
-    dx, dy = diff[0], diff[1]
+  def move_from(cell, diff)
+    dx, dy = diff
     [(cell[0] + dx) % width, (cell[1] + dy) % height]
   end
   
@@ -47,7 +47,7 @@ class GameBoard
     :south_east => [+1,+1]
   }.each_pair do |direction, diff|
     define_method direction.to_s + '_cell' do |cell|
-      move_cell cell, diff
+      move_from cell, diff
     end
   end  
   

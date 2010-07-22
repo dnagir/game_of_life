@@ -1,3 +1,25 @@
+## Solution For the Ruby Programming Challenge ##
+There is nothing special about this solution (from [Dmytrii Nagirniak] (http://dnagir.blogspot.com) ).
+
+Just couple of notes:
+
+The solution includes:
+
+- Original Test (game_of_life_test.rb)
+- RSpec test for the rest
+- Cucumber acceptance tests
+
+So you will need to have RSpec and Cucumber in order to run those tests.
+Just a reminder on how to run those:
+
+    ruby game_of_life_test.rb
+    spec spec
+    cucumber
+
+The stucture of the original project is preserved and no files have been modified.
+
+The lib folder contains the actual code.
+
 ## Ruby Programming Challenge: Game of Life ##
 
 The idea is to implement the game of life in Ruby.

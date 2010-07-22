@@ -34,16 +34,18 @@ describe GameBoard do
     GameBoard.new(:width => 3, :height => 4).should == GameBoard.new(:width => 3, :height => 4)
     GameBoard.new(:width => 2, :height => 2).should_not == GameBoard.new(:width => 3, :height => 4)
     GameBoard.new(:state => [[1]]).should eql( GameBoard.new(:state => [[1]]) )
-  end
-  
-  it "should replace cells"
+  end  
 end
 
 
 
 describe GameBoard, "counting neighbours" do
   before do
-    @board = GameBoard.new(:state => [[1,0,0],[1,1,0],[0,0,0]])
+    @board = GameBoard.new(:state => [
+      [1,0,0],
+      [1,1,0],
+      [0,0,0]
+    ])
   end
   
   def at(x,y)
@@ -51,9 +53,9 @@ describe GameBoard, "counting neighbours" do
   end
 
   it "should calculate neighbours count" do
-    at(0,0).should == 3
+    at(0,0).should == 2
     at(2,0).should == 3
-    at(1,1).should == 3    
+    at(1,1).should == 2   
     at(2,2).should == 3
   end
 end

@@ -26,13 +26,12 @@ Feature: Game board is an open world
       |  2x2  |   south    |  1    | 2x3 |
       |  2x2  | north-west |  1    | 1x1 |
       |  2x2  | north-east |  1    | 3x1 |
-      |  2x2  | south-west |  1    | 3x1 |
+      |  2x2  | south-west |  1    | 1x3 |
       |  2x2  | south-east |  1    | 3x3 |
 
   
   Scenario: Game board initialisation creates living cells
-    Given there is a board 3x3
-    When the game is initialised
+    Given the game is initialised
     Then the board should have living cells
     
 
@@ -45,11 +44,11 @@ Feature: Game board is an open world
     Then cell at <position> should have <count> neighbours
     Examples:
       | position | count |
-      |   1x1    |   3   |            
-      |   1x2    |   3   |
+      |   1x1    |   2   |            
+      |   1x2    |   2   |
       |   1x3    |   3   |
       |   2x1    |   3   |
-      |   2x2    |   3   |
+      |   2x2    |   2   |
       |   2x3    |   3   |
       |   3x1    |   3   |
       |   3x2    |   3   |

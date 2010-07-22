@@ -3,9 +3,10 @@ require File.expand_path("../game_board", __FILE__)
 
 class GameOfLife
   def initialize(board)
-    board = GameBoard.new(:width=>board, :height=>board) if board.respond_to?('odd?')
+    board_is_ready = board.respond_to?('set_cells')
+    board = GameBoard.new(:width=>board, :height=>board) if not board_is_ready
     @board = board
-    setup_cells
+    setup_cells if not board_is_ready
   end
   
   def setup_cells

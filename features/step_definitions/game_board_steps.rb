@@ -19,8 +19,9 @@ Then /^current position should be (\d+)x(\d+)$/ do |x, y|
 end
 
 
-When /^the game is initialised$/ do
-  @game = GameOfLife.new(@board)
+When /^the game is initialised$/ do  
+  @game = GameOfLife.new(@board ? @board : 3)
+  @board = @game.board
 end
 
 Then /^the board should have living cells$/ do

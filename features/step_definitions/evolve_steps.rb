@@ -6,10 +6,10 @@ end
 
 When /^the generation passes$/ do
   @game.evolve
+  @board = @game.board
 end
 
 Then /^the board should be$/ do |table|
-  expected = table.raw
-  @board.should == GameBoard.new(:state => expected)
+  @board.should == GameBoard.new(:state => table.raw)
 end
 

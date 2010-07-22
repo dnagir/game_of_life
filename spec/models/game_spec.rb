@@ -14,23 +14,28 @@ describe GameOfLife, "initialization" do
     game.board.height.should == 3
   end
   
+  it "can be initialized with board" do
+    board = GameBoard.new(:width => 2, :height => 2)
+    GameOfLife.new(board).board.should == board
+  end  
+  
 end
 
 
 
 describe GameOfLife do
   before do
-    @board = GameBoard.new(:width => 2, :height => 3)
-    @game = GameOfLife.new(@board)
+    @game = GameOfLife.new(3)
   end
 
-  it 'should be initialized with living cells' do    
-    @board.live_cells.should_not be_empty
+  it 'should be initialized with living cells' do
+    @game.board.live_cells.should_not be_empty
   end  
   
-  it 'evolving replaces the board' do    
+  it 'evolving replaces the board' do
+    previous_board = @game.board
     @game.evolve
-    @game.state.should_not == @board.state
+    @game.state.should_not equal previous_board
   end
   
   it 'evolving returns the board' do
@@ -38,8 +43,9 @@ describe GameOfLife do
   end
   
   it 'can replace the board' do
+    previous_board = @game.board
     @game.state = [[1]]
-    @game.board.should_not == @board
+    @game.board.should_not equal previous_board
   end
 end
 
