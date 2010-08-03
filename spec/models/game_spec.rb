@@ -2,12 +2,6 @@ require File.expand_path("../../spec_helper", __FILE__)
 
 describe GameOfLife, "initialization" do
 
-  it "can be initialized with the board" do
-    board = GameBoard.new(:width => 2, :height => 3)
-    game = GameOfLife.new(board)
-    game.board.should == board
-  end
-  
   it "can be initialized with board size" do
     game = GameOfLife.new(3)    
     game.board.width.should == 3
